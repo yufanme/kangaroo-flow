@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 import time
 
 
@@ -12,7 +13,9 @@ import time
 class Monitor:
     def __init__(self):
         service = Service(executable_path=ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=service)
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        self.driver = webdriver.Chrome(service=service, options=chrome_options)
         self.data_list = []
 
     def login(self, kan_mail, kan_password):

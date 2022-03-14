@@ -8,11 +8,11 @@ MAIL_1649 = os.environ.get("MAIL_1649")
 MAIL_9527 = os.environ.get("MAIL_9527")
 PASSWORD = os.environ.get("PASSWORD")
 DATA_THRESHOLD_VALUE = 0.8
-
-monitor = Monitor()
+RUN_TIME_INTERVAL = 15
 
 
 def run_monitor():
+    monitor = Monitor()
     emails = [MAIL_5629, MAIL_1649, MAIL_9527]
     for email in emails:
         print(email)
@@ -27,5 +27,5 @@ while True:
     print(datetime.now())
     run_monitor()
     print(f"loop time: {loop_time + 1}.")
-    time.sleep(3600)
+    time.sleep(RUN_TIME_INTERVAL * 60)
 

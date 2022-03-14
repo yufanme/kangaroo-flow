@@ -9,8 +9,6 @@ import time
 import os
 
 
-
-
 class Monitor:
     def __init__(self):
         service = Service(executable_path=ChromeDriverManager().install())

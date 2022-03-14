@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import time
+import os
 
 
 
@@ -20,7 +21,7 @@ class Monitor:
 
     def login(self, kan_mail, kan_password):
         # todo 1 build a webdriver
-        self.driver.get("https://kan.gar.ooo/#/login")
+        self.driver.get(os.environ.get("login_page"))
         # todo 2 login the account
         email = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'input[placeholder="Email"]')))
         password = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'input[placeholder="Password"]')))
@@ -58,4 +59,4 @@ class Monitor:
         checkout_button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="cashier"]/div[2]/div/button')))
         checkout_button.click()
         print("data renewed.")
-        self.driver.get("https://kan.gar.ooo/#/dashboard")
+        self.driver.get(os.environ.get("main_page"))

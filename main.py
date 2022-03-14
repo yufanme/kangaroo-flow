@@ -22,8 +22,10 @@ def run_monitor():
     monitor.driver.quit()
 
 
+loop_time = 0
 while True:
     print(datetime.now())
     run_monitor()
+    print(f"loop time: {loop_time + 1}.")
     time.sleep(3600)
 

@@ -26,6 +26,7 @@ loop_time = 0
 while True:
     print(datetime.now())
     run_monitor()
-    print(f"loop time: {loop_time + 1}.")
+    loop_time += 1
+    print(f"loop time: {loop_time}.")
     time.sleep(RUN_TIME_INTERVAL * 60)
 

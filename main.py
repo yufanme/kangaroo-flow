@@ -26,9 +26,12 @@ def run_monitor():
 
 loop_time = 0
 while True:
+    print("--------------------------------------------------------------------")
+    print(f"loop time: {loop_time}.")
     print(datetime.now())
     run_monitor()
     loop_time += 1
-    print(f"loop time: {loop_time}.")
+    print("--------------------------------------------------------------------")
     time.sleep(RUN_TIME_INTERVAL * 60 + RANDOM_SECOND)
+
 

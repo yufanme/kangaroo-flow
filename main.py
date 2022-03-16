@@ -31,7 +31,7 @@ while True:
     print(datetime.now())
     run_monitor()
     loop_time += 1
-    print("--------------------------------------------------------------------")
+    print("--------------------------------------------------------------------  ")
     time.sleep(RUN_TIME_INTERVAL * 60 + RANDOM_SECOND)
 
 

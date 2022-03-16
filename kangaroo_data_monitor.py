@@ -60,5 +60,5 @@ class Monitor:
 
         checkout_button = WebDriverWait(self.driver, 100).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="cashier"]/div[2]/div/button')))
         checkout_button.click()
-        print("********data renewed********.\n")
+        print("********data renewed*******************************************************************.\n")
         self.driver.get(os.environ.get("main_page"))
